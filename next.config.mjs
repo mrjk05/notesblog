@@ -1,8 +1,13 @@
-// next.config.mjs
 const nextConfig = {
-    output: 'export',  // Add this line
+    output: 'export',
     images: {
-      unoptimized: true  // Add this for static image exports
-    }
+      unoptimized: true
+    },
+    // Skip building API routes for static export
+    skipMiddlewareUrlNormalize: true,
+    skipTrailingSlashRedirect: true,
+    // Disable API routes in static export
+    rewrites: () => [],
   };
+  
   export default nextConfig;
